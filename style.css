@@ -87,10 +87,12 @@ select {
 
 .btn:hover{
     /*make bigger a bit and darker*/
+    cursor: pointer;
 }
 
 .btn:active{
     /*this for once pressed*/
+    cursor: pointer;
 }
 .btn-ghost{
     /* this will override previoyus button settings
