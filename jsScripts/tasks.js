@@ -54,13 +54,13 @@ function renderTasks() {
 $("#lblcustomTaskForm").addEventListener("submit", e => {
   e.preventDefault(); // prevent form resubmission
 
-  const userText = $("#customTaskText").value.trim(); // grab user input
+  const userText = $("#tfCustomTaskText").value.trim(); // grab user input
   if (userText == "") return; // if empty, do nothing
 
-    const ecoPoints = parseFloat($("#customTaskImpact").value) || 0.0; // get impact value
-    const type = $("#customTaskCategory").value; // get category chosen
+    const ecoPoints = parseFloat($("#nfCustomTaskImpact").value) || 0.0; // get impact value
+    const type = $("#tfCustomTaskText").value; // get category chosen
     state.customTasks.push({ id: "c" + Date.now(), text, type, ecoPoints }); // make new task
-    $("#customTaskText").value = ""; // clear input box
+    $("#tfCustomTaskText").value = ""; // clear input box
     //saveState(); not made yet 
     renderTasks();
 });
