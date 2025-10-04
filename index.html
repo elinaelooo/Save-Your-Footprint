@@ -117,7 +117,17 @@
 
     <!-- custom tasks-->
     <div class="task-footer">
-
+        <form id="customTaskForm" class="custom-task" autocomplete="off">
+            <input type="text" id="customTaskInput" placeholder="Add your own eco tasks" required />
+            <input type="number" id="customTaskImpact" min="0.1" max="1.0" step="0.1" value="0.3">
+            <select id="customTaskCategory">
+                <option value="home">Home</option>
+                <option value="travel">Travel</option>
+                <option value="habits">Habits</option>
+            </select>
+            
+            <button class="btn" type="submit">Add</button>
+        </form>
     </div>
     </section>
     </main>
