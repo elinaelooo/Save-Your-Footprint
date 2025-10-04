@@ -1,6 +1,6 @@
 const $ = (s, p = document) => p.querySelector(s);
 let state = {
-    habits: { ddRecycle: "always", ddTransport: "walking", ddDiet: "omnivore", energy: "green", showers: 10},
+    habits: { ddRecycle: "always", ddTransport: "walking", ddDiet: "omnivore", ddEnergy: "green", ddShowers: 10},
     completed: [],
     customTasks: [],
     points: 0
