@@ -5,7 +5,7 @@ For the purposes of code readbilillity and organization
 
 */
 
-export const lblDailyEcoTasksTitle = [
+window.lblDailyEcoTasksTitle = [
   { id: "lights", text: "Turn off unused lights", type: "home", reduction: 0.05 },
   { id: "thermostat", text: "Adjust thermostat 2° (lower in winter/higher in summer)", type: "home", reduction: 0.18 },
   { id: "vampire", text: "Unplug idle electronics (vampire power)", type: "home", reduction: 0.03 },
@@ -38,7 +38,7 @@ export const lblDailyEcoTasksTitle = [
   { id: "veggieDay", text: "Go entirely vegetarian for the whole day", type: "habits", reduction: 1.00 }, // Max reduction for a big effort!
 ];
 
-export const tips = [
+window.tips = [
   "Take quicker shower lil bro! Aim for under 5 minutes.",
   "Unplug electronics when they aren't in use—they still suck 'vampire power.'",
   "Close blinds and curtains during the day in summer to keep cool air in.",

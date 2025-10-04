@@ -1,5 +1,3 @@
-//grab teh array from storageFile.js
-import {lblDailyEcoTasksTitle, tips } from './storageFile.js';
 
 const totalEcoPoints = $("#points"); // span that shows total points
 
