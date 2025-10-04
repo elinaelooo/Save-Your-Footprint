@@ -11,7 +11,26 @@ const lblDailyEcoTasksTitle = [
   { id: "lights", text: "Turn off unused lights", type: "home", reduction: -9999 },
 ];
 
+const lblTasksColumns = { 
+  home: $("#lstTasksHome"), 
+  travel: $("#lstTasksTravel"), 
+  habits: $("#lstTasksHabits") 
+};
 
+function renderTasks() {
+
+  //traverses through lblTasksColoumns array, sets them to empty
+  //then will repopopulate with the new updated tasks
+  Object.values(lblTasksColumns).forEach(c => c.innerHTML = "");
+
+
+
+  
+
+  
+  //updates front end, showing new total Eco points of user
+  totalEcoPoints.textContent = userInfo.points;
+}
 
 
 // button: clear all custom tasks
