@@ -8,7 +8,7 @@ For the purposes of code readbilillity and organization
 window.lblDailyEcoTasksTitle = [
   { id: "lights", text: "Turn off unused lights", type: "home", reduction: 0.05 },
   { id: "thermostat", text: "Adjust thermostat 2° (lower in winter/higher in summer)", type: "home", reduction: 0.18 },
-  { id: "vampire", text: "Unplug idle electronics (vampire power)", type: "home", reduction: 0.03 },
+  { id: "vampire", text: "Unplug idle electronics", type: "home", reduction: 0.03 },
   { id: "laundryCold", text: "Wash a load of laundry in cold water", type: "home", reduction: 0.25 },
   { id: "airDry", text: "Air-dry clothes instead of using the dryer", type: "home", reduction: 0.45 },
   { id: "shortShower", text: "Take a shower under 5 minutes", type: "home", reduction: 0.15 },
@@ -23,17 +23,13 @@ window.lblDailyEcoTasksTitle = [
   { id: "compost", text: "Compost food scraps and yard waste", type: "habits", reduction: 0.12 },
   { id: "thrift", text: "Buy a pre-owned item instead of new", type: "habits", reduction: 0.35 },
   { id: "foodWaste", text: "Eat leftovers/finish all food to avoid waste", type: "habits", reduction: 0.07 },
-  { id: "paperless", text: "Opt for paperless billing/digital receipts", type: "habits", reduction: 0.01 },
   { id: "repair", text: "Repair a broken item instead of replacing it", type: "habits", reduction: 0.40 },
-  { id: "bike", text: "Bike or walk for a short trip (< 3 miles)", type: "travel", reduction: 0.35 },
   { id: "transit", text: "Take public transit instead of driving", type: "travel", reduction: 0.40 },
   { id: "carpool", text: "Carpool with one or more people", type: "travel", reduction: 0.22 },
   { id: "driveSmart", text: "Avoid hard braking and rapid acceleration", type: "travel", reduction: 0.04 },
-  { id: "tirePressure", text: "Check your tire pressure for optimal fuel efficiency", type: "travel", reduction: 0.06 },
   { id: "combineErrands", text: "Combine multiple errands into a single trip", type: "travel", reduction: 0.10 },
   { id: "meatless", text: "Have a completely meatless meal today", type: "habits", reduction: 0.50 },
   { id: "plantMilk", text: "Choose plant-based milk over dairy", type: "habits", reduction: 0.15 },
-  { id: "localFood", text: "Buy one item of locally sourced food", type: "habits", reduction: 0.10 },
   { id: "waterOnly", text: "Drink only water (no sugary drinks)", type: "habits", reduction: 0.03 },
   { id: "veggieDay", text: "Go entirely vegetarian for the whole day", type: "habits", reduction: 1.00 }, // Max reduction for a big effort!
 ];
