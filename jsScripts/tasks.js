@@ -1,14 +1,7 @@
 //grab teh array from storageFile.js
-import { storageArray, lblDailyEcoTasksTitle } from './storageFile.js';
-
+import {lblDailyEcoTasksTitle, tips } from './storageFile.js';
 
 const totalEcoPoints = $("#points"); // span that shows total points
-
-const tips = [
-  "take quicker shower lil bro",
-  "stop eating food",
-  "drink less water",
-];
 
 const lblTasksColumns = { 
   home: $("#taskList-home"), 
