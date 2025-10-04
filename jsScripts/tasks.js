@@ -17,20 +17,53 @@ const lblTasksColumns = {
   habits: $("#lstTasksHabits") 
 };
 
+//wht an i doigngigngiggnigngig gignaisndwiasjdsn
 function renderTasks() {
 
-  //traverses through lblTasksColoumns array, sets them to empty
-  //then will repopopulate with the new updated tasks
-  Object.values(lblTasksColumns).forEach(c => c.innerHTML = "");
+  Object.values(lblTasksColumns).forEach(c => c.innerHTML = ""); //set all types to empty
+  const completedTasksIds = new Set(userInfo.completed); // set of completed task ids
+
+  // loop through all tasks (default + custom)
+  [...lblDailyEcoTasksTitle, ...userInfo.customTasks].forEach(task => {
+    const newItem = document.createElement("li"); // make a new list item
+
+    //will be stylized according to what KING DAVID THE CONQUEREUR decides
+    newItem.className = "task"; // give it class for styling
 
 
+    newItem.innerHTML = `
+      <input type="checkbox" id="${task.id}" ${completedTasksIds.has(task.id) ? "checked" : ""}>
+      <label for="${task.id}">
+        <span>${task.text}</span>
+        <span class="meta">Impact ${task.reduction.toFixed(2)}</span>
+      </label>`;
+    // toggle tasktask box when clicked
+    newItem.querySelector("input").addEventListener("change", () => toggleTask(task));
+    // put this task into the right column
+    (columns[task.type] || columns.habits).appendChild(newItem);
+  });
 
-  
-
-  
   //updates front end, showing new total Eco points of user
   totalEcoPoints.textContent = userInfo.points;
+  //updateUI(); // to be implemented, will refresh score display on front end
+  placeholder();
+
 }
+
+// finds custom form button
+$("#lblcustomTaskForm").addEventListener("submit", e => {
+  e.preventDefault(); // prevent form resubmission
+
+  const userText = $("#customTaskText").value.trim(); // grab user input
+  if (userText == "") return; // if empty, do nothing
+
+    const ecoPoints = parseFloat($("#customTaskImpact").value) || 0.0; // get impact value
+    const type = $("#customTaskCategory").value; // get category chosen
+    state.customTasks.push({ id: "c" + Date.now(), text, type, ecoPoints }); // make new task
+    $("#customTaskText").value = ""; // clear input box
+    //saveState(); not made yet 
+    renderTasks();
+});
 
 
 // button: clear all custom tasks
