@@ -1,13 +1,15 @@
-// this is just a list of random eco tips we can show the user
+const totalEcoPoints = $("#points"); // span that shows total points
+
 const tips = [
   "take quicker shower lil bro",
   "stop eating food",
   "drink less water",
 ];
 
-
-
-
+const lblDailyEcoTasksTitle = [
+  // home tasks
+  { id: "lights", text: "Turn off unused lights", type: "home", reduction: -9999 },
+];
 
 
 
