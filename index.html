@@ -32,70 +32,71 @@
     </section>
 
     <section class="habits-section">
-        <div class="dropdown1">
-            <!--recycle question dropdown-->
-            <label for="lblRecycle">How often do you recycle</label>
-            <select id="ddRecycle" name = "ddRecycle">
-                <option value="always">Always</option>
-                <option value="regularly">Regularly</option>
-                <option value="sometimes">Sometimes</option>
-                <option value="never">Never</option>
-            </select>
-        </div>
+        <form id="habitsForm">
+            <div class="dropdown1">
+                <!--recycle question dropdown-->
+                <label for="lblRecycle">How often do you recycle</label>
+                <select id="ddRecycle" name = "ddRecycle">
+                    <option value="always">Always</option>
+                    <option value="regularly">Regularly</option>
+                    <option value="sometimes">Sometimes</option>
+                    <option value="never">Never</option>
+                </select>
+            </div>
 
-        <div class="dropdown2">
-            <!--Mode of transportation dropdown-->
-            <label for="lblTransport">What is your method of transportation?</label>
-            <select id="ddTransport" name="ddTransport">
-                <option value="car">Car</option>
-                <option value="publictransit">Public transit</option>
-                <option value="bike">Biking</option>
-                <option value="walking">Walking</option>
-                <option value="mixed">Mixed</option>
-            </select>
-        </div>
+            <div class="dropdown2">
+                <!--Mode of transportation dropdown-->
+                <label for="lblTransport">What is your method of transportation?</label>
+                <select id="ddTransport" name="ddTransport">
+                    <option value="car">Car</option>
+                    <option value="publictransit">Public transit</option>
+                    <option value="bike">Biking</option>
+                    <option value="walking">Walking</option>
+                    <option value="mixed">Mixed</option>
+                </select>
+            </div>
 
-        <div class="dropdown3">
-            <!--diet question dropdown-->
-            <label for="lblDiet">What is your diet?</label>
-            <select id="ddDiet" name = "ddDiet">
-                <option value="vegan">Only plants</option>
-                <option value="vegetarian">Mostly plants</option>
-                <option value="omnivore">Mixed</option>
-                <option value="mostlymeat">Mostly meat</option>
-                <option value="carnivore">Only meat</option>
-            </select>
-        </div>
+            <div class="dropdown3">
+                <!--diet question dropdown-->
+                <label for="lblDiet">What is your diet?</label>
+                <select id="ddDiet" name = "ddDiet">
+                    <option value="vegan">Only plants</option>
+                    <option value="vegetarian">Mostly plants</option>
+                    <option value="omnivore">Mixed</option>
+                    <option value="mostlymeat">Mostly meat</option>
+                    <option value="carnivore">Only meat</option>
+                </select>
+            </div>
 
-        <div class="dropdown4">
-            <!--energy usage dropdown-->
-            <label for="lblEnergy">What is your energy usage?</label>
-            <select id="ddEnergy" name = "ddEnergy">
-                <option value="green">Green</option>
-                <option value="efficient">Efficient</option>
-                <option value="average">Average</option>
-                <option value="high">High usage</option>
-            </select>
-        </div>
+            <div class="dropdown4">
+                <!--energy usage dropdown-->
+                <label for="lblEnergy">What is your energy usage?</label>
+                <select id="ddEnergy" name = "ddEnergy">
+                    <option value="green">Green</option>
+                    <option value="efficient">Efficient</option>
+                    <option value="average">Average</option>
+                    <option value="high">High usage</option>
+                </select>
+            </div>
 
-        <div class="dropdown5">
-            <!--Shower Time dropdown-->
-            <!--maybe slider?-->
-            <label for="lblShower">How long are your showers</label>
-            <select id="ddShower" name ="ddShower">
-                <option value="10">10 minutes</option>
-                <option value="20">20 minutes</option>
-                <option value="30">30 minutes</option>
-                <option value="40">40 minutes</option>
-                <option value="50">50 minutes</option>
-                <option value="60">60 minutes</option>
-            </select>
-        </div>
+            <div class="dropdown5">
+                <!--Shower Time dropdown-->
+                <!--maybe slider?-->
+                <label for="lblShower">How long are your showers</label>
+                <select id="ddShower" name ="ddShower">
+                    <option value="10">10 minutes</option>
+                    <option value="20">20 minutes</option>
+                    <option value="30">30 minutes</option>
+                    <option value="40">40 minutes</option>
+                    <option value="50">50 minutes</option>
+                    <option value="60">60 minutes</option>
+                </select>
+            </div>
+        </form>
     </section>
     </main>
     <!-- Below 2 will be our js files for the daily tasks and habits eco point tracking-->
-    <script src="jsScripts/tasks.js"></script>
-    <script src="jsScripts/habits.js"></script>
+    <script src="habits.js"></script>
     
 </body>
 </html>
