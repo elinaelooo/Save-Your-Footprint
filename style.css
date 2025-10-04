@@ -3,12 +3,15 @@
     --text: #021c02;
 }
 body {
-    background: radial-gradient(#f6fff6, #dcf9dc, #f6fff6, #dcf6dc);
+    background: radial-gradient(#f6fff6, #d5ffd5, #f6fff6, #dcf6dc);
     color: var(--text);
     font-family: Inter, Arial, sans-serif;
     line-height: 1.6;
     background-size: 400% 400%;
     animation: movingGradient 30s ease infinite;
+}
+.site-header {
+    font-size: 3.05rem;
 }
     /*it moves*/
 @keyframes movingGradient {
