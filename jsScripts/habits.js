@@ -56,3 +56,16 @@ $("#habitsForm").addEventListener("input", () => {
     console.log(calcBaseEcoScore());
 });
 
+
+
+function shadeCircle(frac) {
+  const circ = 2 * Math.PI * 52;
+  ringFg.style.strokeDasharray = `${circ * frac} ${circ}`;
+}
+
+function updateScreen() {
+  const score = calcBaseEcoScore();
+  ecoScoreValue.innerHTML = `${score.toFixed(2)} <span class="score-out-of">/10</span>`;
+  shadeCircle(score / 10);
+  // Need to have a function to save the current state of the website here.
+}
