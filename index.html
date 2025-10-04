@@ -32,11 +32,19 @@
     </section>
 
     <section class="progress-circle">
+        Eco-Score:
+        <div class="ring-cirlce">
             <svg class="progress-ring" viewBox="0 0 120 120">
             <!-- background circle (gray) -->
             <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
             <circle class="ring-fg" cx="60" cy="60" r="52" stroke-dasharray="0 360"></circle>
             </svg>
+        </div>
+        <div class="ring-middle">
+            <div class="eco-score-display" id="ecoScoreValue" >
+                0 <span class="score-out-of">/10</span> <!-- Needs to be in the format of 8.45/10-->
+            </div> 
+        </div>
     </section>
     
     <section class="habits-section">
