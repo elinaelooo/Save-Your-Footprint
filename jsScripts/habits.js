@@ -54,7 +54,19 @@ function calcBaseEcoScore(){
 }
 $("#habitsForm").addEventListener("input", () => {
     console.log(calcBaseEcoScore());
+    updateScreen()
 });
+
+
+function calcEcoChanges() {
+    const set = new Set(state.completed);
+    return [...lblDailyEcoTasksTitle, ...state.customTasks].filter(task => set.has(task.id)).reduce((sum, task) => sum + task.reduction, 0);
+    
+}
+
+function calcTotalEcoScore (){
+    return Math.min(10, (calcBaseEcoScore() + calcEcoChanges()))
+}
 
 
 
@@ -64,7 +76,8 @@ function shadeCircle(frac) {
 }
 
 function updateScreen() {
-  const score = calcBaseEcoScore();
+  const score = calcTotalEcoScore();
+  console.log(score)
   ecoScoreValue.innerHTML = `${score.toFixed(2)} <span class="score-out-of">/10</span>`;
   shadeCircle(score / 10);
   // Need to have a function to save the current state of the website here.

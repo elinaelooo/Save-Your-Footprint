@@ -41,6 +41,7 @@ function renderTasks() {
     newItem.querySelector("input").addEventListener("change", () => toggleTask(task));
     // put this task into the right column
     (lblTasksColumns[task.type] || lblTasksColumns.habits).appendChild(newItem);
+    
   });
 
   //updates front end, showing new total Eco points of user
@@ -63,6 +64,7 @@ function toggleTask(task) {
   }
   //saveState(); to be made
   renderTasks(); // redraw task list so changes show immediately
+  updateScreen();
 }
 
 
@@ -83,14 +85,16 @@ $("#customTaskForm").addEventListener("submit", e => {
     $("#customTaskInput").value = ""; // clear input box
     //saveState(); not made yet 
     renderTasks();
+    updateScreen();
 });
 
 
 // button: clear all custom tasks
-$("#btnClearcustom").addEventListener("click", () => {
+$("#btnClearCustom").addEventListener("click", () => {
   state.customTasks = []; // reset to empty list
   //saveState();  //not made yet 
   renderTasks();
+  updateScreen();
 });
 
 //reset the daily tasks thingiess
@@ -98,9 +102,15 @@ $("#btnResetToday").addEventListener("click", () => {
   state.completed = []; // remove all tasks previously completed
   //saveState(); //not made yet
   renderTasks();
+  updateScreen();
 });
 
 
 $("#btnNewTip").addEventListener("click", () => {
   $("#lblTipText").textContent = tips[Math.floor(Math.random()*tips.length)];
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderTasks();
+  updateScreen();
 });
