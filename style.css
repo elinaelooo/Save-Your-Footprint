@@ -3,7 +3,7 @@
     --text: #021c02;
 }
 body {
-    background: radial-gradient(#f1fef1, #eafcea, #e6f1e6, #e1f9e1);
+    background: radial-gradient(#f6fff6, #e7fbe7, #e4fce4, #ecf7ec);
     color: var(--text);
     font-family: Inter, Arial, sans-serif;
     line-height: 1.6;
