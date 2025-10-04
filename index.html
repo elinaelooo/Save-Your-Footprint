@@ -7,7 +7,7 @@
     <title>Save Your Footprint</title>
 
     <!-- link to CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="site-header">
@@ -27,139 +27,160 @@
         <p id="lblIntroSubtitle">Adjust your habits and watch your Eco Score Climb!</p>
         </div>
     </section>
+    <div class="content-grid">
 
-    <section class="progress-circle">
-        Eco-Score:
-        <div class="ring-cirlce">
-            <svg class="progress-ring" viewBox="0 0 120 120">
-            <!-- background circle (gray) -->
-            <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
-            <circle class="ring-fg" cx="60" cy="60" r="52" stroke-dasharray="0 360"></circle>
-            </svg>
+        <!-- Free Scrolling right side-->
+        <div class="left-coloumn">
+
+            <!-- Tasks -->
+            <section id="tasks" class="card card-xl task-card">
+                <div class="card-header">
+                    <h2 class="card-title">Daily Eco Tasks</h2>
+                    <span class="muted">Eco Points: <strong id="points">0</strong></span>
+                </div>
+                
+                <!-- task columns-->
+                <div class="tasks-grid">
+                    <div class="task-column">
+                        <h3>Home</h3>
+                        <ul id="taskList-home" class="task-list"></ul>
+                    </div>
+                    <div class="task-column">
+                        <h3>Travel</h3>
+                        <ul id="taskList-travel" class="task-list"></ul>
+                    </div>
+                    <div class="task-column">
+                        <h3>Habits</h3>
+                        <ul id="taskList-habits" class="task-list"></ul>
+                    </div>
+                </div>
+
+                <!-- custom tasks-->
+                <div class="task-footer">
+                    <form id="customTaskForm" class="custom-task" autocomplete="off">
+                        <input type="text" id="customTaskInput" placeholder="Add your own eco tasks" required />
+                        <input type="number" id="customTaskImpact" min="0.1" max="1.0" step="0.1" value="0.3">
+                        <select id="customTaskCategory">
+                            <option value="home">Home</option>
+                            <option value="travel">Travel</option>
+                            <option value="habits">Habits</option>
+                        </select>
+                        
+                        <button class="btn" type="submit">Add</button>
+                    </form>
+                    <!-- other buttons-->
+                    <div class="secondary actions">
+                        <button id="btnResetToday" class="btn btn-ghost">Reset Today</button>
+                        <button id="btnClearCustom" class="btn btn-ghost">Clear Custom Tasks</button>
+                    </div>
+                </div>
+            </section>
+
+            <!--Habbits Section-->
+            <section class="habits-section habits-card">
+                <form id="habitsForm">
+                    <div class="dropdown1">
+                        <!--recycle question dropdown-->
+                        <label for="lblRecycle">How often do you recycle</label>
+                        <select id="ddRecycle" name = "ddRecycle">
+                            <option value="always">Always</option>
+                            <option value="regularly">Regularly</option>
+                            <option value="sometimes">Sometimes</option>
+                            <option value="never">Never</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown2">
+                        <!--Mode of transportation dropdown-->
+                        <label for="lblTransport">What is your method of transportation?</label>
+                        <select id="ddTransport" name="ddTransport">
+                            <option value="car">Car</option>
+                            <option value="publictransit">Public transit</option>
+                            <option value="bike">Biking</option>
+                            <option value="walking">Walking</option>
+                            <option value="mixed">Mixed</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown3">
+                        <!--diet question dropdown-->
+                        <label for="lblDiet">What is your diet?</label>
+                        <select id="ddDiet" name = "ddDiet">
+                            <option value="vegan">Only plants</option>
+                            <option value="vegetarian">Mostly plants</option>
+                            <option value="omnivore">Mixed</option>
+                            <option value="mostlymeat">Mostly meat</option>
+                            <option value="carnivore">Only meat</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown4">
+                        <!--energy usage dropdown-->
+                        <label for="lblEnergy">What is your energy usage?</label>
+                        <select id="ddEnergy" name = "ddEnergy">
+                            <option value="green">Green</option>
+                            <option value="efficient">Efficient</option>
+                            <option value="average">Average</option>
+                            <option value="high">High usage</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown5">
+                        <!--Shower Time dropdown-->
+                        <!--maybe slider?-->
+                        <label for="lblShower">How long are your showers</label>
+                        <select id="ddShower" name ="ddShower">
+                            <option value="10">10 minutes</option>
+                            <option value="20">20 minutes</option>
+                            <option value="30">30 minutes</option>
+                            <option value="40">40 minutes</option>
+                            <option value="50">50 minutes</option>
+                            <option value="60">60 minutes</option>
+                        </select>
+                    </div>
+                </form>
+            </section>
+
         </div>
-        <div class="ring-middle">
-            <div class="eco-score-display" id="ecoScoreValue" >
-                0 <span class="score-out-of">/10</span> <!-- Needs to be in the format of 8.45/10-->
-            </div> 
+
+        <!-- The fixed right side-->
+        <div class="side-pannel">
+            <!--Progress Circle-->
+            <section class="progress-circle">
+                Eco-Score:
+                <div class="ring-cirlce">
+                    <svg class="progress-ring" viewBox="0 0 120 120">
+                    <!-- background circle (gray) -->
+                    <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                    <circle class="ring-fg" cx="60" cy="60" r="52" stroke-dasharray="0 360"></circle>
+                    </svg>
+                </div>
+                <div class="ring-middle">
+                    <div class="eco-score-display" id="ecoScoreValue" >
+                        0 <span class="score-out-of">/10</span> <!-- Needs to be in the format of 8.45/10-->
+                    </div> 
+                </div>
+            </section>
+
+            <!-- tips-->
+            <section class="tasks-section">
+                <div class="card-header">
+                    <h2 class="card-title">Quick Green tips</h2>
+                    <button id="btnNewTip" class="btn icon-btn">🔄</button>
+                </div>
+                <p id="lblTipText" class="tip-text">Short showers save water and energy. Aim for 5-7 minutes.</p>
+            </section>
         </div>
-    </section>
+
+    </div>
+
     
-    <section class="habits-section">
-        <form id="habitsForm">
-            <div class="dropdown1">
-                <!--recycle question dropdown-->
-                <label for="lblRecycle">How often do you recycle</label>
-                <select id="ddRecycle" name = "ddRecycle">
-                    <option value="always">Always</option>
-                    <option value="regularly">Regularly</option>
-                    <option value="sometimes">Sometimes</option>
-                    <option value="never">Never</option>
-                </select>
-            </div>
 
-            <div class="dropdown2">
-                <!--Mode of transportation dropdown-->
-                <label for="lblTransport">What is your method of transportation?</label>
-                <select id="ddTransport" name="ddTransport">
-                    <option value="car">Car</option>
-                    <option value="publictransit">Public transit</option>
-                    <option value="bike">Biking</option>
-                    <option value="walking">Walking</option>
-                    <option value="mixed">Mixed</option>
-                </select>
-            </div>
 
-            <div class="dropdown3">
-                <!--diet question dropdown-->
-                <label for="lblDiet">What is your diet?</label>
-                <select id="ddDiet" name = "ddDiet">
-                    <option value="vegan">Only plants</option>
-                    <option value="vegetarian">Mostly plants</option>
-                    <option value="omnivore">Mixed</option>
-                    <option value="mostlymeat">Mostly meat</option>
-                    <option value="carnivore">Only meat</option>
-                </select>
-            </div>
 
-            <div class="dropdown4">
-                <!--energy usage dropdown-->
-                <label for="lblEnergy">What is your energy usage?</label>
-                <select id="ddEnergy" name = "ddEnergy">
-                    <option value="green">Green</option>
-                    <option value="efficient">Efficient</option>
-                    <option value="average">Average</option>
-                    <option value="high">High usage</option>
-                </select>
-            </div>
 
-            <div class="dropdown5">
-                <!--Shower Time dropdown-->
-                <!--maybe slider?-->
-                <label for="lblShower">How long are your showers</label>
-                <select id="ddShower" name ="ddShower">
-                    <option value="10">10 minutes</option>
-                    <option value="20">20 minutes</option>
-                    <option value="30">30 minutes</option>
-                    <option value="40">40 minutes</option>
-                    <option value="50">50 minutes</option>
-                    <option value="60">60 minutes</option>
-                </select>
-            </div>
-        </form>
-    </section>
 
-    <!-- Tasks -->
-    <section id="tasks" class="card card-xl">
-        <div class="card-header">
-            <h2 class="card-title">Daily Eco Tasks</h2>
-            <span class="muted">Eco Points: <strong id="points">0</strong></span>
-            </div>
-        </div>
-    <!-- task columns-->
-    <div class="tasks-grid">
-        <div class="task-column">
-            <h3>Home</h3>
-            <ul id="taskList-home" class="task-list"></ul>
-        </div>
-        <div class="task-column">
-            <h3>Travel</h3>
-            <ul id="taskList-travel" class="task-list"></ul>
-        </div>
-        <div class="task-column">
-            <h3>Habits</h3>
-            <ul id="taskList-habits" class="task-list"></ul>
-        </div>
-    </div>
 
-    <!-- custom tasks-->
-    <div class="task-footer">
-        <form id="customTaskForm" class="custom-task" autocomplete="off">
-            <input type="text" id="customTaskInput" placeholder="Add your own eco tasks" required />
-            <input type="number" id="customTaskImpact" min="0.1" max="1.0" step="0.1" value="0.3">
-            <select id="customTaskCategory">
-                <option value="home">Home</option>
-                <option value="travel">Travel</option>
-                <option value="habits">Habits</option>
-            </select>
-            
-            <button class="btn" type="submit">Add</button>
-        </form>
-        <!-- other buttons-->
-        <div class="secondary actions">
-            <button id="btnResetToday" class="btn btn-ghost">Reset Today</button>
-            <button id="btnClearCustom" class="btn btn-ghost">Clear Custom Tasks</button>
-        </div>
-    </div>
-    </section>
-
-    <!-- tips-->
-    <section class="card tips">
-        <div class="card-header">
-            <h2 class="card-title">Quick Green tips</h2>
-            <button id="btnNewTip" class="btn icon-btn">🔄</button>
-        </div>
-        <p id="lblTipText" class="tip-text">Short showers save water and energy. Aim for 5-7 minutes.</p>
-    </section>
     </main>
     <!-- Below 2 will be our js files for the daily tasks and habits eco point tracking-->
     <script src="jsScripts/habits.js"></script>
