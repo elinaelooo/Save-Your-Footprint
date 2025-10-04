@@ -12,10 +12,7 @@
 <body>
     <header class="site-header">
         <div class="brand">
-            <!-- lead icon, truly incredible -->
-            <svg id="iconBrand" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 2C8 5 6 8.5 6 12c0 4 2.5 7 6 9 3.5-2 6-5 6-9 0-3.5-2-7-6-10zM8 12c0-2.2 1.1-4.6 4-7.1 2.9 2.5 4 5 4 7.1 0 2.9-1.8 5.4-4 7-2.2-1.6-4-4.1-4-7z"></path>
-            </svg>
+            
             <!-- this text goes next to the icon-->
             <span id="lblBrandName">Save Your Footprint</span>
         </div>
@@ -109,6 +106,59 @@
                 </select>
             </div>
         </form>
+    </section>
+
+    <!-- Tasks -->
+    <section id="tasks" class="card card-xl">
+        <div class="card-header">
+            <h2 class="card-title">Daily Eco Tasks</h2>
+            <span class="muted">Eco Points: <strong id="points">0</strong></span>
+            </div>
+        </div>
+    <!-- task columns-->
+    <div class="tasks-grid">
+        <div class="task-column">
+            <h3>Home</h3>
+            <ul id="taskList-home" class="task-list"></ul>
+        </div>
+        <div class="task-column">
+            <h3>Travel</h3>
+            <ul id="taskList-travel" class="task-list"></ul>
+        </div>
+        <div class="task-column">
+            <h3>Habits</h3>
+            <ul id="taskList-habits" class="task-list"></ul>
+        </div>
+    </div>
+
+    <!-- custom tasks-->
+    <div class="task-footer">
+        <form id="customTaskForm" class="custom-task" autocomplete="off">
+            <input type="text" id="customTaskInput" placeholder="Add your own eco tasks" required />
+            <input type="number" id="customTaskImpact" min="0.1" max="1.0" step="0.1" value="0.3">
+            <select id="customTaskCategory">
+                <option value="home">Home</option>
+                <option value="travel">Travel</option>
+                <option value="habits">Habits</option>
+            </select>
+            
+            <button class="btn" type="submit">Add</button>
+        </form>
+        <!-- other buttons-->
+        <div class="secondary actions">
+            <button id="btnResetToday" class="btn btn-ghost">Reset Today</button>
+            <button id="btnClearCustom" class="btn btn-ghost">Clear Custom Tasks</button>
+        </div>
+    </div>
+    </section>
+
+    <!-- tips-->
+    <section class="card tips">
+        <div class="card-header">
+            <h2 class="card-title">Quick Green tips</h2>
+            <button id="btnNewTip" class="btn icon-btn">🔄</button>
+        </div>
+        <p id="lblTipText" class="tip-text">Short showers save water and energy. Aim for 5-7 minutes.</p>
     </section>
     </main>
     <!-- Below 2 will be our js files for the daily tasks and habits eco point tracking-->
