@@ -1,6 +1,5 @@
 const $ = (s, p = document) => p.querySelector(s);
 
-}
 function calcBaseEcoScore(){
     const f = new FormData($("#habitsForm"))
     let base = 2.5;
