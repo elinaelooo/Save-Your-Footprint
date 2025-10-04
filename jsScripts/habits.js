@@ -65,7 +65,7 @@ function calcEcoChanges() {
 }
 
 function calcTotalEcoScore (){
-    return Math.min(10, (calcBaseEcoScore() + calcEcoChanges()))
+    return Math.min(10, (max(calcBaseEcoScore() + calcEcoChanges(), 0)))
 }
 
 
