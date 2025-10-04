@@ -56,9 +56,9 @@ function toggleTask(task) {
   if (i >= 0) {
     userInfo.completed.splice(i, 1);
     userInfo.points = Math.max(0, userInfo.points - 1);
-  } else {
-    // if not completed, add it and increase points
-    userInfo.completed.push(task.id);
+  } 
+  else {
+    userInfo.completed.push(task.id);//add to theuir complete task lists
     userInfo.points++;
   }
   //saveState(); to be made
