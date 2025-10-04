@@ -1,3 +1,14 @@
+:root{
+    --bg: #eef2ef;
+    --text: #021c02;
+}
+body {
+    background: radial-gradient(circle,#fbfcfb, #e8f5e8, #e9fce9, #e4fae4);
+    color: var(--text);
+    font-family: Inter, Arial, sans-serif;
+    line-height: 1.6;
+    /* do not change background i wanna animat it*/
+}
 .content-grid {
     display: grid;
     /*  Adjust 'fr' values to control the ratio (e.g., 60% / 40%) */
