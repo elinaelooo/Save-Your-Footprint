@@ -3,11 +3,18 @@
     --text: #021c02;
 }
 body {
-    background: radial-gradient(circle,#fbfcfb, #e8f5e8, #e9fce9, #e4fae4);
+    background: radial-gradient(#f1fef1, #eafcea, #e6f1e6, #e1f9e1);
     color: var(--text);
     font-family: Inter, Arial, sans-serif;
     line-height: 1.6;
+    background-size: 400% 400%;
+    animation: movingGradient 30s ease infinite;
     /* do not change background i wanna animat it*/
+}
+@keyframes movingGradient {
+    0% {background-position: 0% 50%; }
+    50% {background-position: 100% 50%; }
+    100% {background-position: 0% 50%; }
 }
 .content-grid {
     display: grid;
