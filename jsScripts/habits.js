@@ -18,8 +18,8 @@ function loadState() {
 }
 loadState();
 
-const footprintValue = $("#footprintValue");
 const ringFg = $(".ring-fg");
+const ecoScoreValue = $("#ecoScoreValue");
 
 function calcBaseEcoScore(){
     const f = new FormData($("#habitsForm"))
@@ -80,7 +80,7 @@ function calcEcoChanges() {
 }
 
 function calcTotalEcoScore (){
-    return Math.min(10, (max(calcBaseEcoScore() + calcEcoChanges(), 0)))
+    return Math.min(10, (Math.max(calcBaseEcoScore() + calcEcoChanges(), 0)))
 }
 
 
