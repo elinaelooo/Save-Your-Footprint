@@ -1,6 +1,11 @@
 const $ = (s, p = document) => p.querySelector(s);
 const STORAGE_KEY = "STATE_SCORE";
 
+document.addEventListener("DOMContentLoaded", () => {
+    updateScreen();
+});
+
+
 let state = {
     habits: { ddRecycle: "always", ddTransport: "walking", ddDiet: "omnivore", ddEnergy: "green", ddShowers: 10},
     completed: [],
