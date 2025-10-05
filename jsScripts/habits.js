@@ -6,6 +6,19 @@ let state = {
     points: 0
 };
 
+function savestate() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function loadState() {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) state = JSON.parse(raw);
+}
+loadState();
+
+const footprintValue = $("#footprintValue");
+const ringFg = $(".ring-fg");
+
 function calcBaseEcoScore(){
     const f = new FormData($("#habitsForm"))
     let base = 2.5;
