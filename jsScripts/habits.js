@@ -1,4 +1,6 @@
 const $ = (s, p = document) => p.querySelector(s);
+const STORAGE_KEY = "STATE_SCORE";
+
 let state = {
     habits: { ddRecycle: "always", ddTransport: "walking", ddDiet: "omnivore", ddEnergy: "green", ddShowers: 10},
     completed: [],
@@ -6,7 +8,7 @@ let state = {
     points: 0
 };
 
-function savestate() {
+function saveState() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
