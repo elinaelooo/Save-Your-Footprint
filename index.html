@@ -5,6 +5,8 @@
     <!-- Stops the scaling from getting messed up on phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save Your Footprint</title>
+    <link rel="icon" type="image/png" href="Logos/FloatingIsland_small.png">
+
 
     <!-- link to CSS file -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
@@ -14,7 +16,7 @@
     <header class="site-header">
         <div class="brand">
             <!-- this text goes next to the icon-->
-            <span id="lblBrandName">Save Your Footprint</span>
+            <span id="lblBrandName"><img src="Logos/SYF_2.png" class="syf-text"></span>
         </div>
     </header>
 
@@ -23,6 +25,7 @@
     <!-- intro-->
     <section class="intro">
         <div class="intro-content">
+        <img src="Logos/FloatingIsland_Transparent.png" class="main-title-image">
         <h1 id="lblIntroTitle">Track your eco-friendly journey 🌿</h1>
         <p id="lblIntroSubtitle">Adjust your habits and watch your Eco Score Climb!</p>
         </div>
@@ -152,8 +155,10 @@
                 <!--Progress Circle-->
                 <section class="progress-circle">
                     <div class="ring-container">
+                        <div class="card-header">
+                            <h2 class="card-title">Your Eco-Score</h2>
+                        </div>
                         <svg viewBox="0 0 120 120">
-                            <!-- background circle (gray) -->
                             <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
                             <circle class="ring-fg" cx="60" cy="60" r="52" stroke-dasharray="0 360"></circle>
                         </svg>
