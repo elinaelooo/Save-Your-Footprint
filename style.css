@@ -1,34 +1,64 @@
+body{
+    font-family:sans-serif;
+    margin: 0px;
+    line-height: 1.5;
+}
+
+.site-header{
+    position: sticky; top: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    margin: 0px;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(to bottom, rgba(195, 240, 165, 0.178), rgb(195, 240, 165, 0.3));
+    backdrop-filter: blur(12px);
+}
+
+
+
+
+
 .content-grid {
     display: grid;
-    /*  Adjust 'fr' values to control the ratio (e.g., 60% / 40%) */
-    grid-template-columns: 3fr 2fr; 
+    /*  Adjust 'fr' values to control the ratio (e.g., 66% / 33%) */
+    grid-template-columns: 2fr 1fr; 
     grid-template-rows: auto auto; /* auto-sized based on content */
     gap: 20px; /* Spacing between the grid items */ 
     padding: 20px; 
-    max-width: 1200px; /* Optional: limit width on large screens */
+    max-width: 1400px;
     margin: 0 auto;
-    /* Potentially considering centering this section */ 
 }
 
-.tasks-section {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    min-height: 400px; /* Ensure it has enough space */
+.content-grid > *{ 
+    padding: 40px;
+    border-radius: 50px;
+    background-color: rgb(243, 243, 243);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+
 }
 
-.habits-card {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-/* The side-panel holds the circle and tips in a column */
-.side-panel {
-    grid-column: 2 / 3; /* Right Column */
-    grid-row: 1 / 3;     /* Spans both the top and bottom rows */
-    display: flex; /* Use Flexbox to stack its contents (circle and tips) */
+.left-column-scroll {
+    /* Takes up the left column */
+    grid-column: 1 / 2; 
+    display: flex;
     flex-direction: column;
-    gap: 20px; /* Spacing between circle and tips */
+    gap: 20px; /* Space between Tasks and Habits */
 }
+
+
+/* The Right Panel*/
+.side-panel {
+    grid-column: 2 / 3; 
+    position: sticky;
+    /* Lock the element to the top of the scrollable area */
+    top: 20px; 
+    /* Use padding from the header, adjust as needed */
+    height: fit-content;
+
+    display: flex; 
+    flex-direction: column;
+    gap: 20px; 
+}
+
 
 /* Make the circle section fit nicely at the top of the side-panel */
 .progress-circle {
@@ -36,4 +66,5 @@
     flex-shrink: 0; 
     /* Center the content of the circle section */
     text-align: center; 
+
 }
