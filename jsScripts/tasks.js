@@ -1,4 +1,3 @@
-
 const totalEcoPoints = $("#points"); // span that shows total points
 
 const lblTasksColumns = { 
@@ -7,7 +6,6 @@ const lblTasksColumns = {
   habits: $("#taskList-habits") 
 };
 
-//wht an i doigngigngiggnigngig gignaisndwiasjdsn
 function renderTasks() {
 
   Object.values(lblTasksColumns).forEach(c => c.innerHTML = ""); //set all types to empty
@@ -52,7 +50,7 @@ function toggleTask(task) {
     state.completed.push(task.id);//add to theuir complete task lists
     state.points++;
   }
-  //saveState(); to be made
+  saveState();
   renderTasks(); // redraw task list so changes show immediately
   updateScreen();
 }
@@ -73,7 +71,7 @@ $("#customTaskForm").addEventListener("submit", e => {
                               reduction: ecoPoints 
     }); // make new task
     $("#customTaskInput").value = ""; // clear input box
-    //saveState(); not made yet 
+    saveState();
     renderTasks();
     updateScreen();
 });
@@ -82,15 +80,15 @@ $("#customTaskForm").addEventListener("submit", e => {
 // button: clear all custom tasks
 $("#btnClearCustom").addEventListener("click", () => {
   state.customTasks = []; // reset to empty list
-  //saveState();  //not made yet 
+  saveState();
   renderTasks();
   updateScreen();
 });
 
-//reset the daily tasks thingiess
+//reset the daily tasks
 $("#btnResetToday").addEventListener("click", () => {
   state.completed = []; // remove all tasks previously completed
-  //saveState(); //not made yet
+  saveState();
   renderTasks();
   updateScreen();
 });
@@ -102,5 +100,7 @@ $("#btnNewTip").addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderTasks();
+  loadState();
+  applySavedHabits();
   updateScreen();
 });
