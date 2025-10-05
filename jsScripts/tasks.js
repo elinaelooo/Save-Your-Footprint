@@ -52,7 +52,7 @@ function toggleTask(task) {
     state.completed.push(task.id);//add to theuir complete task lists
     state.points++;
   }
-  //saveState(); to be made
+  saveState();
   renderTasks(); // redraw task list so changes show immediately
   updateScreen();
 }
@@ -73,7 +73,7 @@ $("#customTaskForm").addEventListener("submit", e => {
                               reduction: ecoPoints 
     }); // make new task
     $("#customTaskInput").value = ""; // clear input box
-    //saveState(); not made yet 
+    saveState();
     renderTasks();
     updateScreen();
 });
@@ -82,7 +82,7 @@ $("#customTaskForm").addEventListener("submit", e => {
 // button: clear all custom tasks
 $("#btnClearCustom").addEventListener("click", () => {
   state.customTasks = []; // reset to empty list
-  //saveState();  //not made yet 
+  saveState();
   renderTasks();
   updateScreen();
 });
@@ -90,7 +90,7 @@ $("#btnClearCustom").addEventListener("click", () => {
 //reset the daily tasks thingiess
 $("#btnResetToday").addEventListener("click", () => {
   state.completed = []; // remove all tasks previously completed
-  //saveState(); //not made yet
+  saveState();
   renderTasks();
   updateScreen();
 });
