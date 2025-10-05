@@ -7,12 +7,11 @@ For the purposes of code readbilillity and organization
 
 window.lblDailyEcoTasksTitle = [
   { id: "lights", text: "Turn off unused lights", type: "home", reduction: 0.05 },
-  { id: "thermostat", text: "Adjust thermostat 2° (lower in winter/higher in summer)", type: "home", reduction: 0.18 },
+  { id: "thermostat", text: "Adjust thermostat by 2° (lower in winter/higher in summer)", type: "home", reduction: 0.18 },
   { id: "vampire", text: "Unplug idle electronics", type: "home", reduction: 0.03 },
   { id: "laundryCold", text: "Wash a load of laundry in cold water", type: "home", reduction: 0.25 },
   { id: "airDry", text: "Air-dry clothes instead of using the dryer", type: "home", reduction: 0.45 },
   { id: "shortShower", text: "Take a shower under 5 minutes", type: "home", reduction: 0.15 },
-  { id: "leakFix", text: "Fix a leaky faucet or toilet", type: "home", reduction: 0.10 },
   { id: "dishwasherFull", text: "Run the dishwasher only when completely full", type: "home", reduction: 0.08 },
   { id: "ovenOff", text: "Turn off the oven a few minutes early to use residual heat", type: "home", reduction: 0.02 },
   { id: "insulation", text: "Close curtains/blinds to regulate room temperature", type: "home", reduction: 0.07 },
@@ -35,7 +34,7 @@ window.lblDailyEcoTasksTitle = [
 ];
 
 window.tips = [
-  "Take quicker shower lil bro! Aim for under 5 minutes.",
+  "Take a quicker shower! Aim for under 5 minutes.",
   "Unplug electronics when they aren't in use—they still suck 'vampire power.'",
   "Close blinds and curtains during the day in summer to keep cool air in.",
   "Turn down your water heater temperature a few degrees; you won't notice the difference, but the planet will.",
@@ -62,8 +61,8 @@ window.tips = [
   "Use old t-shirts as rags instead of buying paper towels.",
   "Leave the car at home and walk or bike for trips under two miles.",
   "Plan your errands to combine multiple stops into one efficient trip.",
-  "If you must drive, maintain steady speed and avoid hard braking.",
-  "Check your tire pressure once a month; proper inflation saves gas.",
+  "If you must drive, maintain a steady speed and avoid hard braking.",
+  "Check your tyre pressure once a month; proper inflation saves gas.",
   "Take advantage of public transportation or carpool when heading to work or school.",
   "Did you know sitting in traffic burns a ton of gas? Check for less congested routes.",
   "If you're waiting for more than 30 seconds, turn your engine off.",
@@ -75,9 +74,9 @@ window.tips = [
   "Freeze extra food before it goes bad to prevent food waste.",
   "Grow your own herbs or small vegetables on a windowsill or balcony.",
   "Bring your own container for restaurant leftovers instead of using their Styrofoam.",
-  "Focus on plants: a colorful plate is usually a sustainable plate.",
+  "Focus on plants: a colourful plate is usually a sustainable plate.",
   "Before buying, ask yourself: 'Do I really need this?'",
-  "Borrow tools or items you only need once from a neighbor or library.",
+  "Borrow tools or items you only need once from a neighbour or library.",
   "Fix that leaky toilet or dripping faucet! It wastes gallons of water daily.",
   "When you receive a package, reuse the box and packing materials.",
   "Support companies that prioritize sustainable sourcing and production.",
