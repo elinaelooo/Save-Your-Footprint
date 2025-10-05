@@ -45,8 +45,8 @@ body {
     margin: 0;
 }
 .main-title-image{
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 
 /* --- Global Content Layout --- */
@@ -314,7 +314,6 @@ body {
     background-color: #f9f9f9;
     font-size: 1rem;
     appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%235aa63c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
     background-repeat: no-repeat;
     background-position: right 10px center;
     padding-right: 30px;
