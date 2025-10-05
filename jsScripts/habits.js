@@ -100,5 +100,5 @@ function updateScreen() {
   console.log(score)
   ecoScoreValue.innerHTML = `${score.toFixed(2)} <span class="score-out-of">/10</span>`;
   shadeCircle(score / 10);
-  // Need to have a function to save the current state of the website here.
+  saveState();
 }
