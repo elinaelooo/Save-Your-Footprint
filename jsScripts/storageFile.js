@@ -4,7 +4,6 @@ This file will contain multiple arrays of objects that will be massive (thts the
 For the purposes of code readbilillity and organization
 
 */
-const $ = (s, p = document) => p.querySelector(s);
 
 window.lblDailyEcoTasksTitle = [
   { id: "lights", text: "Turn off unused lights", type: "home", reduction: 0.05 },

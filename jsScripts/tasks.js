@@ -1,4 +1,4 @@
-const totalEcoPoints = $("#points"); // span that shows total points
+const totalEcoPoints = $("#points");
 
 const lblTasksColumns = { 
   home: $("#taskList-home"), 
@@ -7,17 +7,12 @@ const lblTasksColumns = {
 };
 
 function renderTasks() {
+  Object.values(lblTasksColumns).forEach(c => c.innerHTML = "");
+  const completedTasksIds = new Set(state.completed);
 
-  Object.values(lblTasksColumns).forEach(c => c.innerHTML = ""); //set all types to empty
-  const completedTasksIds = new Set(state.completed); // set of completed task ids
-
-  // loop through all tasks (default + custom)
   [...lblDailyEcoTasksTitle, ...state.customTasks].forEach(task => {
-    const newItem = document.createElement("li"); // make a new list item
-
-    //will be stylized according to what KING DAVID THE CONQUEREUR decides
-    newItem.className = "task"; // give it class for styling
-
+    const newItem = document.createElement("li");
+    newItem.className = "task";
 
     newItem.innerHTML = `
       <input type="checkbox" id="${task.id}" ${completedTasksIds.has(task.id) ? "checked" : ""}>
@@ -25,82 +20,65 @@ function renderTasks() {
         <span>${task.text}</span>
         <span class="meta">Impact ${task.reduction.toFixed(2)}</span>
       </label>`;
-    // toggle tasktask box when clicked
-    newItem.querySelector("input").addEventListener("change", () => toggleTask(task));
-    // put this task into the right column
-    (lblTasksColumns[task.type] || lblTasksColumns.habits).appendChild(newItem);
     
+    newItem.querySelector("input").addEventListener("change", () => toggleTask(task));
+    (lblTasksColumns[task.type] || lblTasksColumns.habits).appendChild(newItem);
   });
 
-  //updates front end, showing new total Eco points of user
   totalEcoPoints.textContent = state.points;
-  //updateUI(); // to be implemented, will refresh score display on front end
-  //placeholder();
-
 }
 
-// when the user checks or unchecks a task
 function toggleTask(task) {
   const i = state.completed.indexOf(task.id); 
   if (i >= 0) {
     state.completed.splice(i, 1);
     state.points = Math.max(0, state.points - 1);
-  } 
-  else {
-    state.completed.push(task.id);//add to theuir complete task lists
+  } else {
+    state.completed.push(task.id);
     state.points++;
   }
   saveState();
-  renderTasks(); // redraw task list so changes show immediately
+  renderTasks();
   updateScreen();
 }
 
-
-// finds custom form button
 $("#customTaskForm").addEventListener("submit", e => {
-  e.preventDefault(); // prevent form resubmission
+  e.preventDefault();
+  const userText = $("#customTaskInput").value.trim();
+  if (userText === "") return;
 
-  const userText = $("#customTaskInput").value.trim(); // grab user input
-  if (userText == "") return; // if empty, do nothing
-
-    const ecoPoints = parseFloat($("#customTaskImpact").value) || 0.0; // get impact value
-    const type = $("#customTaskCategory").value; // get category chosen
-    state.customTasks.push({ id: "c" + Date.now(), 
-                              text: userText, 
-                              type, 
-                              reduction: ecoPoints 
-    }); // make new task
-    $("#customTaskInput").value = ""; // clear input box
-    saveState();
-    renderTasks();
-    updateScreen();
+  const ecoPoints = parseFloat($("#customTaskImpact").value) || 0.0;
+  const type = $("#customTaskCategory").value;
+  
+  state.customTasks.push({ 
+    id: "c" + Date.now(), 
+    text: userText, 
+    type, 
+    reduction: ecoPoints 
+  });
+  
+  $("#customTaskInput").value = "";
+  saveState();
+  renderTasks();
+  updateScreen();
 });
 
-
-// button: clear all custom tasks
 $("#btnClearCustom").addEventListener("click", () => {
-  state.customTasks = []; // reset to empty list
+  state.customTasks = [];
   saveState();
   renderTasks();
   updateScreen();
 });
 
-//reset the daily tasks
 $("#btnResetToday").addEventListener("click", () => {
-  state.completed = []; // remove all tasks previously completed
+  state.completed = [];
+  state.points = 0;
   saveState();
   renderTasks();
   updateScreen();
 });
-
 
 $("#btnNewTip").addEventListener("click", () => {
-  $("#lblTipText").textContent = tips[Math.floor(Math.random()*tips.length)];
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  renderTasks();
-  loadState();
-  applySavedHabits();
-  updateScreen();
+  const randomTip = tips[Math.floor(Math.random() * tips.length)];
+  $("#lblTipText").textContent = randomTip;
 });

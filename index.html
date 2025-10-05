@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Stops the scaling from getting messed up on phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save Your Footprint</title>
 
+    <!-- link to CSS file -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="site-header">
         <div class="brand">
-            
+            <!-- this text goes next to the icon-->
             <span id="lblBrandName">Save Your Footprint</span>
         </div>
     </header>
 
     <main id="main">
 
+    <!-- intro-->
     <section class="intro">
         <div class="intro-content">
         <h1 id="lblIntroTitle">Track your eco-friendly journey 🌿</h1>
@@ -27,8 +30,10 @@
     
     <div class="content-grid">
 
+        <!-- Free Scrolling left side-->
         <div class="left-column">
 
+            <!-- Tasks -->
             <section id="tasks" class="card card-xl task-card">
                 <div class="card-header">
                     <h2 class="card-title">Daily Eco Tasks</h2>
@@ -38,21 +43,25 @@
                 <div class="task-category">
                     <h3>Home Energy & Water</h3>
                     <ul id="taskList-home" class="task-list">
-                        </ul>
+                        <!-- Tasks will be injected here by tasks.js -->
+                    </ul>
                 </div>
                 
                 <div class="task-category">
                     <h3>Travel & Transport</h3>
                     <ul id="taskList-travel" class="task-list">
-                         </ul>
+                         <!-- Tasks will be injected here by tasks.js -->
+                    </ul>
                 </div>
 
                 <div class="task-category">
                     <h3>Habits & Waste</h3>
                     <ul id="taskList-habits" class="task-list">
-                         </ul>
+                         <!-- Tasks will be injected here by tasks.js -->
+                    </ul>
                 </div>
 
+                <!-- Custom Task Form -->
                 <form id="customTaskForm">
                     <input type="text" id="customTaskInput" placeholder="Add custom task (e.g., 'Recycled old clothes')" required>
                     <input type="number" step="0.01" id="customTaskImpact" placeholder="Impact (0.00)" min="0" max="1" value="0.10">
@@ -71,6 +80,7 @@
 
             </section>
 
+            <!-- Habits -->
             <section id="habits" class="card card-xl habits-card">
                 <div class="card-header">
                     <h2 class="card-title">Your Baseline Habits</h2>
@@ -135,12 +145,15 @@
             </section>
         </div>
 
+        <!-- The fixed right side-->
+        <!-- side-wrapper holds the space in the grid, side-panel is fixed within it -->
         <div class="side-wrapper">
             <div class="side-panel">
+                <!--Progress Circle-->
                 <section class="progress-circle">
                     <div class="ring-container">
-                        <b>Your Eco-Score</b>
                         <svg viewBox="0 0 120 120">
+                            <!-- background circle (gray) -->
                             <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
                             <circle class="ring-fg" cx="60" cy="60" r="52" stroke-dasharray="0 360"></circle>
                         </svg>
@@ -152,6 +165,7 @@
                     </div>
                 </section>
 
+                <!-- tips-->
                 <section class="tasks-section">
                     <div class="card-header">
                         <h2 class="card-title">Quick Green tips</h2>
@@ -164,13 +178,18 @@
 
     </div>
 
-    
-
-
     </main>
+    
+    <!-- JavaScript files -->
     <script src="jsScripts/storageFile.js"></script>
-    <script src="jsScripts/tasks.js"></script>
     <script src="jsScripts/habits.js"></script>
+    <script src="jsScripts/tasks.js"></script>
+    <script>
+        // Initialize on page load
+        applySavedHabits();
+        renderTasks();
+        updateScreen();
+    </script>
     
 </body>
 </html>
