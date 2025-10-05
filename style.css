@@ -316,22 +316,22 @@ body {
     padding-right: 30px;
 }
 
-
-/* --- MODIFIED THIS SECTION --- */
+/* Progress Circle */
 .progress-circle {
     display: flex;
-    justify-content: center; /* Center the ring container */
+    justify-content: center;
     align-items: center;
+    padding: 20px 0;
 }
 
 .ring-container {
     position: relative;
-    /* Increased size */
-    width: 220px;
-    height: 220px;
-    /* Removed bottom margin */
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 50px;
 }
-/* --- END OF MODIFICATIONS --- */
 
 .ring-container svg {
     width: 100%;
@@ -355,7 +355,7 @@ body {
 
 .ring-middle {
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -364,17 +364,16 @@ body {
     align-items: center;
 }
 
-/* --- MODIFIED THIS SECTION --- */
 .eco-score-display {
-    /* Increased font size */
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 600;
     color: #38761d;
+    line-height: 1;
+    text-align: center;
 }
-/* --- END OF MODIFICATIONS --- */
 
 .score-out-of {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #888;
 }
@@ -396,7 +395,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     transition: transform 0.1s;
-    color: #5aa63c; /* Give the icon a color */
+    color: #5aa63c;
     padding: 0;
 }
 
@@ -404,11 +403,10 @@ body {
     transform: scale(1.1);
 }
 
-/* Added style for the new SVG icon */
 .icon-btn svg {
     width: 24px;
     height: 24px;
-    stroke-width: 2.5px; /* Make the icon lines a bit thicker */
+    stroke-width: 2.5px;
 }
 
 
