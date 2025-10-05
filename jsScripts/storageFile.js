@@ -31,7 +31,7 @@ window.lblDailyEcoTasksTitle = [
   { id: "meatless", text: "Have a completely meatless meal today", type: "habits", reduction: 0.50 },
   { id: "plantMilk", text: "Choose plant-based milk over dairy", type: "habits", reduction: 0.15 },
   { id: "waterOnly", text: "Drink only water (no sugary drinks)", type: "habits", reduction: 0.03 },
-  { id: "veggieDay", text: "Go entirely vegetarian for the whole day", type: "habits", reduction: 1.00 }, // Max reduction for a big effort!
+  { id: "veggieDay", text: "Go entirely vegetarian for the whole day", type: "habits", reduction: 1.00 },
 ];
 
 window.tips = [
