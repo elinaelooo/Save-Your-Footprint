@@ -1,13 +1,8 @@
-const $ = (s, p = document) => p.querySelector(s);
 const STORAGE_KEY = "STATE_SCORE";
-
-document.addEventListener("DOMContentLoaded", () => {
-    updateScreen();
-});
 
 
 let state = {
-    habits: { ddRecycle: "always", ddTransport: "walking", ddDiet: "omnivore", ddEnergy: "green", ddShowers: 10},
+    habits: { ddRecycle: "always", ddTransport: "walking", ddDiet: "omnivore", ddEnergy: "green", ddShower: 10},
     completed: [],
     customTasks: [],
     points: 0
@@ -21,6 +16,15 @@ function loadState() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) state = JSON.parse(raw);
 }
+function applySavedHabits() {
+    const h = state.habits;
+    $("#ddRecycle").value = h.ddRecycle;
+    $("#ddTransport").value = h.ddTransport;
+    $("#ddDiet").value = h.ddDiet;
+    $("#ddEnergy").value = h.ddEnergy;
+    $("#ddShower").value = h.ddShower;
+}
+
 loadState();
 
 const ringFg = $(".ring-fg");
@@ -69,11 +73,22 @@ function calcBaseEcoScore(){
         case "50": base -= 0.2; break;
         case "60": base -= 0.4; break;
     }
+    
 
     return base;
 }
 $("#habitsForm").addEventListener("input", () => {
+    const f = new FormData($("#habitsForm"))
+        state.habits = {
+        ddRecycle: f.get("ddRecycle"),
+        ddTransport: f.get("ddTransport"),
+        ddDiet: f.get("ddDiet"),
+        ddEnergy: f.get("ddEnergy"),
+        ddShower: f.get("ddShower")
+    };
+
     console.log(calcBaseEcoScore());
+    saveState();
     updateScreen()
 });
 

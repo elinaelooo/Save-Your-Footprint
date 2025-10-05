@@ -1,4 +1,3 @@
-
 const totalEcoPoints = $("#points"); // span that shows total points
 
 const lblTasksColumns = { 
@@ -7,7 +6,6 @@ const lblTasksColumns = {
   habits: $("#taskList-habits") 
 };
 
-//wht an i doigngigngiggnigngig gignaisndwiasjdsn
 function renderTasks() {
 
   Object.values(lblTasksColumns).forEach(c => c.innerHTML = ""); //set all types to empty
@@ -87,7 +85,7 @@ $("#btnClearCustom").addEventListener("click", () => {
   updateScreen();
 });
 
-//reset the daily tasks thingiess
+//reset the daily tasks
 $("#btnResetToday").addEventListener("click", () => {
   state.completed = []; // remove all tasks previously completed
   saveState();
@@ -102,5 +100,7 @@ $("#btnNewTip").addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderTasks();
+  loadState();
+  applySavedHabits();
   updateScreen();
 });
